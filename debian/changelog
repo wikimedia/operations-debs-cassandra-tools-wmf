@@ -1,3 +1,9 @@
+cassandra-tools-wmf (1.0.2-1) unstable; urgency=medium
+
+  * New release.
+
+ -- Eric Evans <eevans@wikimedia.org>  Wed, 24 May 2017 15:59:20 -0500
+
 cassandra-tools-wmf (1.0.1-1) unstable; urgency=medium
 
   * New release.
