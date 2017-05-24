@@ -48,7 +48,7 @@ class Instance(object):
         self.service_name = __get("service_name")
         self.jmx_port = __get("jmx_port")
 
-        self.nodetool = Nodetool(self.listen_address, self.jmx_port)
+        self.nodetool = Nodetool("localhost", self.jmx_port)
 
     def restart(self, attempts=10, retry=6, post_shutdown=None):
         """
