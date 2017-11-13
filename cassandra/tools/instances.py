@@ -50,7 +50,7 @@ class Instance(object):
 
         self.nodetool = Nodetool("localhost", self.jmx_port)
 
-    def restart(self, attempts=10, retry=6, post_shutdown=None):
+    def restart(self, attempts=20, retry=6, post_shutdown=None):
         """
         Restarts this Cassandra instance.
         """
@@ -81,7 +81,7 @@ class Instance(object):
                 self.__log_info("CQL (%s:%s) is UP", self.rpc_address, self.native_transport_port)
                 listening = True
                 break
-            elif (i % 2) == 0 and i < 9:
+            elif i < (len(attempts) - 1):
                 self.__log_warn(
                     "CQL (%s:%s) not listening (will retry)...",
                     self.rpc_address,

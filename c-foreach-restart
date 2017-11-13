@@ -32,7 +32,7 @@ def main():
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Cassandra instance restarter")
-    parser.add_argument("-a", "--attempts", metavar="ATTEMPTS", default=10, type=int,
+    parser.add_argument("-a", "--attempts", metavar="ATTEMPTS", default=20, type=int,
                         help="Maximum number of times to check if service is up after restarting.")
     parser.add_argument("-r", "--retry", metavar="RETRY", default=6, type=int,
                         help="Number seconds between connection attempts, in seconds.")
