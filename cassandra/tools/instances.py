@@ -50,7 +50,7 @@ class Instance(object):
 
         self.nodetool = Nodetool("localhost", self.jmx_port)
 
-    def restart(self, attempts=20, retry=6, post_shutdown=None):
+    def restart(self, attempts=20, retry=12, post_shutdown=None):
         """
         Restarts this Cassandra instance.
         """

@@ -34,12 +34,12 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Cassandra instance restarter")
     parser.add_argument("-a", "--attempts", metavar="ATTEMPTS", default=20, type=int,
                         help="Maximum number of times to check if service is up after restarting.")
-    parser.add_argument("-r", "--retry", metavar="RETRY", default=6, type=int,
+    parser.add_argument("-r", "--retry", metavar="RETRY", default=12, type=int,
                         help="Number seconds between connection attempts, in seconds.")
     parser.add_argument("--execute-post-shutdown", metavar="CMD", type=str,
                         help="Command to execute after Cassandra has been shutdown, and before it "
                         "is started back up.")
-    parser.add_argument("-d", "--delay", metavar="DELAY", type=float, default=0.0,
+    parser.add_argument("-d", "--delay", metavar="DELAY", type=float, default=10.0,
                         help="Delay between instance restarts (defaults to no delay).")
     parser.add_argument("--logmsgbot", action="store_true",
                         help="Log restarts to SAL (via logmsgbot and #wikimedia-operations).")
